@@ -2,6 +2,16 @@ var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
 
+
+/**
+
+*----------------------------------------------------------------------*
+
+On line num... there is a Loader; Anythng that's a JS file get gets run through the babel loader with the exception of node_modules and bower_components(if that will be implimented) 
+
+
+*----------------------------------------------------------------------*
+**/
 module.exports = {
   context: path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : false,
