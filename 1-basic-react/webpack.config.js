@@ -2,16 +2,6 @@ var debug = process.env.NODE_ENV !== "production";
 var webpack = require('webpack');
 var path = require('path');
 
-
-/**
-
-*----------------------------------------------------------------------*
-
-On line num... there is a Loader; Anythng that's a JS file get gets run through the babel loader with the exception of node_modules and bower_components(if that will be implimented) 
-
-
-*----------------------------------------------------------------------*
-**/
 module.exports = {
   context: path.join(__dirname, "src"),
   devtool: debug ? "inline-sourcemap" : false,
@@ -39,3 +29,15 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
   ],
 };
+
+/**
+
+*----------------------------------------------------------------------*
+
+(Entry): On line 8, we are taking "client.js" and we are transpiling it on line 24 to be "client.min.js"
+
+***1) On line 14 there is a (Loader); Anythng that's a JS file get gets run through the babel loader with the exception of node_modules and bower_components(if that will be implimented). ****2) On line 16 (presets) "react JSX", es6 code and some bleeding edge stuff will be transpile. ***3)On line 17 (plugins) we are going to convert some "react-html-attrs", add class properties and use decorators.
+
+
+*----------------------------------------------------------------------*
+**/
