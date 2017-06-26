@@ -8,3 +8,12 @@ export default class Title extends React.Component {
     );
   }
 }
+
+/**
+
+ONE:
+
+As the code on line 7 gets updated
+
+
+**/
